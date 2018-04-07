@@ -13,7 +13,7 @@
 <% @lists.each do | l | %>
 	<tr>
       <td><%= l.name %></td>
-      <td><%= link_to 'Show', list_path(l) %></td>
+      <td><%= link_to 'Show', list_task_index_path(l) %></td>
     </tr>
 <% end %>
 </table>

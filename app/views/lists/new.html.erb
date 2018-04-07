@@ -6,5 +6,12 @@
 	<%= f.label :name, 'Name' %>
 	<%= f.text_field :name %>
 
+	<%= f.fields_for :tasks do |ff| %>
+		<%= ff.label :title %>
+		<%= ff.text_field :title %>
+
+		<%= ff.label :description %>
+		<%= ff.text_area :description %>
+	<% end %>
 	<%= f.submit 'Save' %>
 <% end %>

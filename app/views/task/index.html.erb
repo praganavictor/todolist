@@ -1,0 +1,15 @@
+<h1><%= @list.name %></h1>
+<%= link_to 'New Task', new_list_task_path(@list) %>
+
+<table>
+  <tr>
+    <th>title</th>
+    <th>description</th>
+  </tr>
+<% @tasks.each do |t| %>
+	<tr>
+      <td><%= t.title %></td>
+      <td><%= t.description %></td>
+    </tr>
+<% end %>
+</table>

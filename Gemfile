@@ -17,6 +17,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'capybara'
 gem 'rubocop', require: false
+gem 'bootstrap'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
