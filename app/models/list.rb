@@ -8,3 +8,4 @@ class List < ApplicationRecord
 	accepts_nested_attributes_for :tasks
 end
 
+

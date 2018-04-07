@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   resources :lists do
   	resources :task
   end 
-
 end
