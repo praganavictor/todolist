@@ -1,1 +1,19 @@
-<h1>Bem vindo</h1>
+<h1>Welcome</h1>
+<%= link_to 'New TodoList', new_list_path %>
+
+<% if flash[:success] %>
+  <p class="success"><%= flash[:success] %></p>
+<% end %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+<% @lists.each do | l | %>
+	<tr>
+      <td><%= l.name %></td>
+      <td><%= link_to 'Show', list_path(l) %></td>
+    </tr>
+<% end %>
+</table>

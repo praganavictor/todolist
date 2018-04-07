@@ -11,7 +11,7 @@ feature 'User has to log in' do
 		
 		click_on 'Log in'
 
-		expect(page).to have_content('Bem vindo')
+		expect(page).to have_content('Welcome')
 	end
 
 	scenario 'and has to sign up first' do
@@ -24,6 +24,6 @@ feature 'User has to log in' do
 		fill_in 'Password confirmation', with: 'vi123456'
 		click_on 'Sign up'
 
-		expect(page).to have_content('Bem vindo')
+		expect(page).to have_content('Welcome')
 	end
 end
