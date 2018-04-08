@@ -8,11 +8,22 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Status</th>
+    <th></th>
     <th></th>
   </tr>
 <% @lists.each do | l | %>
 	<tr>
       <td><%= l.name %></td>
+      <td>
+      	<% if l.publish? %>
+      		Public
+      	<% else %>
+      		Private
+      	<% end %>
+      </td>
+      <td><%= link_to 'Private', list_privating_path(l), method: 'post' %></td>
+      <td><%= link_to 'Public', list_publish_path(l), method: 'post' %></td>
       <td><%= link_to 'Show', list_task_index_path(l) %></td>
     </tr>
 <% end %>

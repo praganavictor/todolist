@@ -19,7 +19,7 @@ feature 'User create a todo list' do
 	end
 
 	scenario 'and has to fill all the fields' do 
-				User.create(email: 'victor@email.com', password: 'vi123456')
+		User.create(email: 'victor@email.com', password: 'vi123456')
 
 		visit root_path
 

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :lists do
-  	resources :task
+	post 'publish', to: 'lists#publish'
+	post 'privating', to: 'lists#privating'
+  	resources :task 
   end 
 end

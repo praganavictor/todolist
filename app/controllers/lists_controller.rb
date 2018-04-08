@@ -21,6 +21,20 @@ class ListsController < ApplicationController
 	    end
 	end
 
+	def publish
+		list = List.find(params[:list_id])
+		list.publish!
+		flash[:success] = 'Now your list is a publish list'
+		redirect_to root_path
+	end
+
+	def privating
+		list = List.find(params[:list_id])
+		list.privating!
+		flash[:success] = 'Now your list is a private list'
+		redirect_to root_path
+	end
+
 	private
     def list_params
       params.require(:list).permit(:name, :tasks_attributes => [:title, :description])
