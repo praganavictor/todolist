@@ -1,7 +1,7 @@
 <h1><%= @list.name %></h1>
-<%= link_to 'New Task', new_list_task_path(@list) %>
+<%= link_to 'New Task', new_list_task_path(@list), class: "btn btn-outline-primary" %>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>title</th>
     <th>description</th>

@@ -1,12 +1,15 @@
 <h1>Welcome</h1>
-<%= link_to 'New TodoList', new_list_path %>
+
+<%= link_to 'New TodoList', new_list_path, class: "btn btn-outline-primary" %>
 
 <% if flash[:success] %>
+<div class="alert alert-success" role="alert">
   <p class="success"><%= flash[:success] %></p>
+</div>
 <% end %>
 
 <h1>Public Private</h1>
-<table>
+<table class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Status</th>
@@ -32,7 +35,7 @@
 <hr>
 
 <h1>Public List</h1>
-<table>
+<table class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Status</th>
@@ -61,7 +64,7 @@
 <hr>
 
 <h1>Fav List</h1>
-<table>
+<table class="table table-striped">
   <tr>
     <th>Name</th>
     <th></th>
