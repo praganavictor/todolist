@@ -27,5 +27,6 @@ feature 'User close a task' do
 		click_on 'Close'
 
 		expect(page).to have_content('Task has been close')
+		
 	end
 end

@@ -5,11 +5,13 @@
   <tr>
     <th>title</th>
     <th>description</th>
+    <th></th>
   </tr>
 <% @tasks.each do |t| %>
 	<tr>
       <td><%= t.title %></td>
       <td><%= t.description %></td>
+      <td><%= link_to 'Close', list_task_path(t.list_id, t.id), method: 'delete' %></td>
     </tr>
 <% end %>
 </table> 
