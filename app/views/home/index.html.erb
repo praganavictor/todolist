@@ -5,6 +5,7 @@
   <p class="success"><%= flash[:success] %></p>
 <% end %>
 
+<h1>Public Private</h1>
 <table>
   <tr>
     <th>Name</th>
@@ -13,16 +14,42 @@
     <th></th>
     <th></th>
   </tr>
-<% @lists.each do | l | %>
-	<tr>
+<% @lists_private.each do | l | %>
+  <tr>
       <td><%= l.name %></td>
-      	<% if l.publish? %>
-      	<td>Public</td>	
+        <% if l.publish? %>
+        <td>Public</td> 
         <td><%= link_to 'Private', list_privating_path(l), method: 'post' %></td>
-      	<% else %>
-      	<td>Private</td>
+        <% else %>
+        <td>Private</td>
         <td><%= link_to 'Public', list_publish_path(l), method: 'post' %></td>
-      	<% end %>
+        <% end %>
+      <td><%= link_to 'Show', list_task_index_path(l) %></td>
+    </tr>
+<% end %>
+</table>
+
+<hr>
+
+<h1>Public List</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @lists_public.each do | l | %>
+  <tr>
+      <td><%= l.name %></td>
+        <% if l.publish? %>
+        <td>Public</td> 
+        <td><%= link_to 'Private', list_privating_path(l), method: 'post' %></td>
+        <% else %>
+        <td>Private</td>
+        <td><%= link_to 'Public', list_publish_path(l), method: 'post' %></td>
+        <% end %>
       <td><%= link_to 'Show', list_task_index_path(l) %></td>
     </tr>
 <% end %>
