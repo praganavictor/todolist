@@ -11,19 +11,18 @@
     <th>Status</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 <% @lists.each do | l | %>
 	<tr>
       <td><%= l.name %></td>
-      <td>
       	<% if l.publish? %>
-      		Public
+      	<td>Public</td>	
+        <td><%= link_to 'Private', list_privating_path(l), method: 'post' %></td>
       	<% else %>
-      		Private
+      	<td>Private</td>
+        <td><%= link_to 'Public', list_publish_path(l), method: 'post' %></td>
       	<% end %>
-      </td>
-      <td><%= link_to 'Private', list_privating_path(l), method: 'post' %></td>
-      <td><%= link_to 'Public', list_publish_path(l), method: 'post' %></td>
       <td><%= link_to 'Show', list_task_index_path(l) %></td>
     </tr>
 <% end %>
