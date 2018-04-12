@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :lists do
 	post 'publish', to: 'lists#publish'
 	post 'privating', to: 'lists#privating'
+	post 'unfavorite', to: 'lists#unfavorite'
+	post 'favorite', to: 'lists#favorite'
+
   	resources :task 
   end 
 end

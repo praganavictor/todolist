@@ -35,6 +35,20 @@ class ListsController < ApplicationController
 		redirect_to root_path
 	end
 
+	def unfavorite
+		list = List.find(params[:list_id])
+		list.unfavorite!
+		flash[:success] = 'You have removed the list from FavList'
+		redirect_to root_path
+	end
+
+	def favorite
+		list = List.find(params[:list_id])
+		list.favorite!
+		flash[:success] = 'Your list is now on your FavList'
+		redirect_to root_path
+	end
+
 	private
     def list_params
       params.require(:list).permit(:name, :tasks_attributes => [:title, :description])

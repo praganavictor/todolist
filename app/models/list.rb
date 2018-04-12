@@ -6,8 +6,7 @@ class List < ApplicationRecord
 	validates :name, presence: true
 
 	enum status: [ :publish, :privating ]
-
+	enum fav: [ :unfavorite, :favorite]
+	
 	accepts_nested_attributes_for :tasks
 end
-
-

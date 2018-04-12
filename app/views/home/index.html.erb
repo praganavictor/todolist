@@ -50,6 +50,29 @@
         <td>Private</td>
         <td><%= link_to 'Public', list_publish_path(l), method: 'post' %></td>
         <% end %>
+        <% if l.unfavorite? %>
+          <td><%= link_to 'Fav', list_favorite_path(l), method: 'post' %></td>
+        <% end %>
+      <td><%= link_to 'Show', list_task_index_path(l) %></td>
+    </tr>
+<% end %>
+</table>
+
+<hr>
+
+<h1>Fav List</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @lists_fav.each do | l | %>
+  <tr>
+      <td><%= l.name %></td>
+        <% if l.favorite? %>
+          <td><%= link_to 'UnFav', list_unfavorite_path(l), method: 'post' %></td>
+        <% end %>
       <td><%= link_to 'Show', list_task_index_path(l) %></td>
     </tr>
 <% end %>
